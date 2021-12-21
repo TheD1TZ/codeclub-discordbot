@@ -28,7 +28,7 @@ public class Main {
         Dotenv dotenv = Dotenv.load();
 
         // We login blocking, just because it is simpler and doesn't matter here
-        DiscordApi api = new DiscordApiBuilder().setToken(dotenv.get("TOKEN")).setAllIntents().login().join();
+        DiscordApi api = new DiscordApiBuilder().setToken(System.getenv("TOKEN")).setAllIntents().login().join();
 
         // Print the invite url of the bot
         logger.info("You can invite me by using the following url: " + api.createBotInvite());
