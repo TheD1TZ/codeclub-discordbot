@@ -18,7 +18,6 @@ public class HelpThreadModule implements MessageComponentCreateListener {
     @Override
     public void onComponentCreate(MessageComponentCreateEvent event) {
 
-        if (!event.getMessageComponentInteraction().getChannel().equals(event.getApi().getTextChannelById("922555442796847185"))) return;
         MessageComponentInteraction messageComponentInteraction = event.getMessageComponentInteraction();
         String customId = messageComponentInteraction.getCustomId();
         Server server = event.getInteraction().getServer().get();

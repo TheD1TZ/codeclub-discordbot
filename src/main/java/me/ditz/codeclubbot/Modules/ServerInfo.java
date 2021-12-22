@@ -1,19 +1,12 @@
 package me.ditz.codeclubbot.Modules;
 
-import org.javacord.api.DiscordApi;
 import org.javacord.api.entity.channel.TextChannel;
-import org.javacord.api.entity.emoji.CustomEmoji;
-import org.javacord.api.entity.emoji.Emoji;
-import org.javacord.api.entity.message.Message;
 import org.javacord.api.entity.message.MessageBuilder;
 import org.javacord.api.entity.message.component.ActionRow;
 import org.javacord.api.entity.message.component.SelectMenu;
 import org.javacord.api.entity.message.component.SelectMenuOption;
 import org.javacord.api.entity.message.embed.EmbedBuilder;
-import org.javacord.api.event.interaction.MessageComponentCreateEvent;
 import org.javacord.api.event.message.MessageCreateEvent;
-import org.javacord.api.interaction.MessageComponentInteraction;
-import org.javacord.api.listener.interaction.MessageComponentCreateListener;
 import org.javacord.api.listener.message.MessageCreateListener;
 
 import java.awt.*;

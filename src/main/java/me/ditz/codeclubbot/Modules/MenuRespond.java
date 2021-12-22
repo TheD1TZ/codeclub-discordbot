@@ -12,7 +12,8 @@ public class MenuRespond implements MessageComponentCreateListener {
     public void onComponentCreate(MessageComponentCreateEvent event) {
         MessageComponentInteraction messageComponentInteraction = event.getMessageComponentInteraction();
         String customId = messageComponentInteraction.getCustomId();
-        SelectMenuOption arr = messageComponentInteraction.asSelectMenuInteraction().get().getPossibleOptions().get(1);
+
+        if (!event.getInteraction().getChannel().equals(event.getInteraction().getServer().get().getTextChannelById(922618951878447125L))) return;
 
         if ("languages".equals(customId)) {
             User user = messageComponentInteraction.getUser();

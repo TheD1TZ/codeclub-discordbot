@@ -1,6 +1,5 @@
 package me.ditz.codeclubbot;
 
-import io.github.cdimascio.dotenv.Dotenv;
 import me.ditz.codeclubbot.Events.MemberJoinEvent;
 import me.ditz.codeclubbot.Modules.HelpThreads.HelpThreadMessage;
 import me.ditz.codeclubbot.Modules.HelpThreads.HelpThreadModule;
@@ -18,20 +17,12 @@ public class Main {
 
     private static final Logger logger = LogManager.getLogger(Main.class);
 
-    /**
-     * The entrance point of our program.
-     *
-     * @param args The arguments for the program. The first element should be the bot's token.
-     */
     public static void main(String[] args) {
         // Enable debugging, if no slf4j logger was found
-        Dotenv dotenv = Dotenv.load();
 
         // We login blocking, just because it is simpler and doesn't matter here
-        DiscordApi api = new DiscordApiBuilder().setToken(dotenv.get("TOKEN")).setAllIntents().login().join();
+        DiscordApi api = new DiscordApiBuilder().setToken(args[0]).setAllIntents().login().join();
 
-        // Print the invite url of the bot
-        logger.info("You can invite me by using the following url: " + api.createBotInvite());
 
         // Add Commands
         api.addMessageCreateListener(new UserInfoCommand());
