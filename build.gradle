@@ -4,7 +4,7 @@ plugins {
 }
 
 group = "me.ditz.codeclubbot"
-version = "1.0.0"
+version = "1.1"
 
 repositories {
     mavenCentral()
@@ -29,6 +29,6 @@ build.mustRunAfter test
 
 jar {
     manifest{
-        attributes 'Class-Path': '/libs/codeclub-discordbot-1.0.0-all.jar', 'MainClass':'me.ditz.codeclubbot.Main'
+        attributes 'Class-Path': '/libs/codeclub-discordbot-1.1-all.jar', 'MainClass':'me.ditz.codeclubbot.Main'
     }
 }
