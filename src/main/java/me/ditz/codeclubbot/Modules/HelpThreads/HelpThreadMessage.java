@@ -25,8 +25,6 @@ public class HelpThreadMessage implements MessageCreateListener {
                             ActionRow.of(Button.success("create","Create Thread"))
                     )
                     .send(channel);
-
-
         }
     }
 }

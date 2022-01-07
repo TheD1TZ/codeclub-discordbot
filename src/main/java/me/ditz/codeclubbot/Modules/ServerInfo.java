@@ -25,18 +25,20 @@ public class ServerInfo implements MessageCreateListener {
                     .send(channel);
 
             new MessageBuilder()
-                    .setContent(
-                            "Welcome to the CodeClub! <:CodeClub:922884681932886066>\n" +
-                            "\n" +
-                            "Rules :newspaper:\n" +
-                            "The rules are simple and are based upon common sense along with Discord's community guidelines: https://discord.com/guidelines\n" +
-                            "\n" +
-                            "1. Don't be rude or hateful\n" +
-                            "2. Don't advertise in help channels or places that it doesn't make sense\n" +
-                            "3. Don't DM staff for help with programming unless they ask you to\n" +
-                            "\n" +
-                            "Besides that, we are pretty chill and you should be too. This is a place of learning and growing!")
-                    .removeAllEmbeds()
+                    .addEmbed(new EmbedBuilder()
+                            .setTitle("Welcome to the CodeClub! <:CodeClub:922884681932886066>")
+                            .setDescription(
+                                    "Rules :newspaper:\n" +
+                                    "The rules are simple and are based upon common sense along with Discord's community guidelines: https://discord.com/guidelines\n" +
+                                    "\n" +
+                                    "1. Don't be rude or hateful\n" +
+                                    "2. Don't advertise in help channels or places that it doesn't make sense\n" +
+                                    "3. Don't DM staff for help with programming unless they ask you to\n" +
+                                    "\n" +
+                                    "Besides that, we are pretty chill and you should be too. This is a place of learning and growing!"
+                            )
+                            .setColor(Color.red)
+                    )
                     .send(channel);
 
             new MessageBuilder()
@@ -51,7 +53,11 @@ public class ServerInfo implements MessageCreateListener {
                                     "<:js:922526359178313739> **JavaScript**\n" +
                                     "<:kotlin:922526359560024115> **Kotlin**\n" +
                                     "<:python:922526359421616179> **Python**\n" +
-                                    "<:php:922562995672973322> **PHP**")
+                                    "<:php:922562995672973322> **PHP**\n" +
+                                    "<:ruby:928074747013627964> **Ruby**\n" +
+                                    "<:linux:928075035879559200> **Linux**\n" +
+                                    "<:servers:928075263105990656> **Servers**"
+                                    )
                             .setColor(Color.LIGHT_GRAY))
                     .addComponents(
                             ActionRow.of(SelectMenu.create("languages", "Click here to show the languages", 0, 8,
@@ -63,7 +69,10 @@ public class ServerInfo implements MessageCreateListener {
                                             SelectMenuOption.create("JavaScript", "js", "Click here to add JavaScript",event.getApi().getCustomEmojiById("922526359178313739").get()),
                                             SelectMenuOption.create("Kotlin", "kotlin", "Click here to add Kotlin",event.getApi().getCustomEmojiById("922526359560024115").get()),
                                             SelectMenuOption.create("Python", "python", "Click here to add Python",event.getApi().getCustomEmojiById("922526359421616179").get()),
-                                            SelectMenuOption.create("PHP", "php", "Click here to add PHP",event.getApi().getCustomEmojiById("922562995672973322").get())
+                                            SelectMenuOption.create("PHP", "php", "Click here to add PHP",event.getApi().getCustomEmojiById("922562995672973322").get()),
+                                            SelectMenuOption.create("Ruby", "ruby", "Click here to add Ruby",event.getApi().getCustomEmojiById("928074747013627964").get()),
+                                            SelectMenuOption.create("Linux", "linux", "Click here to add Linux",event.getApi().getCustomEmojiById("928075035879559200").get()),
+                                            SelectMenuOption.create("Servers", "servers", "Click here to add Servers",event.getApi().getCustomEmojiById("928075263105990656").get())
                                     ))))
                     .send(channel);
 

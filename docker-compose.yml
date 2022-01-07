@@ -1,0 +1,13 @@
+version: "3"
+
+services:
+  codeclubbot:
+    build: 
+      context: .
+    volumes:
+      - .bot-data:/server
+    container_name: ${CONTAINER_NAME}
+
+volumes:
+  bot-data:
+  

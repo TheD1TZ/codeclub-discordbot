@@ -110,6 +110,42 @@ public class MenuRespond implements MessageComponentCreateListener {
             }
 
 
+            // RUBY Role
+            if (messageComponentInteraction.asSelectMenuInteraction().get().getChosenOptions().stream().anyMatch(selectMenuOption -> selectMenuOption.getValue().contains("ruby"))) {
+                messageComponentInteraction.createImmediateResponder()
+                        .respond();
+                user.addRole(event.getApi().getRoleById(Roles.RUBY_ROLE.getRole()).get());
+            } else {
+                messageComponentInteraction.createImmediateResponder()
+                        .respond();
+                user.removeRole(event.getApi().getRoleById(Roles.RUBY_ROLE.getRole()).get());
+            }
+
+
+            // LINUX Role
+            if (messageComponentInteraction.asSelectMenuInteraction().get().getChosenOptions().stream().anyMatch(selectMenuOption -> selectMenuOption.getValue().contains("linux"))) {
+                messageComponentInteraction.createImmediateResponder()
+                        .respond();
+                user.addRole(event.getApi().getRoleById(Roles.LINUX_ROLE.getRole()).get());
+            } else {
+                messageComponentInteraction.createImmediateResponder()
+                        .respond();
+                user.removeRole(event.getApi().getRoleById(Roles.LINUX_ROLE.getRole()).get());
+            }
+
+
+            // SERVERS Role
+            if (messageComponentInteraction.asSelectMenuInteraction().get().getChosenOptions().stream().anyMatch(selectMenuOption -> selectMenuOption.getValue().contains("servers"))) {
+                messageComponentInteraction.createImmediateResponder()
+                        .respond();
+                user.addRole(event.getApi().getRoleById(Roles.SERVERS_ROLE.getRole()).get());
+            } else {
+                messageComponentInteraction.createImmediateResponder()
+                        .respond();
+                user.removeRole(event.getApi().getRoleById(Roles.SERVERS_ROLE.getRole()).get());
+            }
+
+
 
         }
     }

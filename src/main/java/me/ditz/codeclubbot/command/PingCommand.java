@@ -1,19 +1,22 @@
 package me.ditz.codeclubbot.command;
 
 import me.ditz.codeclubbot.Main;
-import org.javacord.api.DiscordApi;
-import org.javacord.api.entity.server.Server;
+import org.javacord.api.event.interaction.SlashCommandCreateEvent;
 import org.javacord.api.interaction.*;
-import org.javacord.api.interaction.internal.SlashCommandBuilderDelegate;
+import org.javacord.api.listener.interaction.SlashCommandCreateListener;
 
-import java.util.Arrays;
-import java.util.List;
-import java.util.concurrent.CompletableFuture;
+public class PingCommand implements SlashCommandCreateListener {
+    @Override
+    public void onSlashCommandCreate(SlashCommandCreateEvent event) {
+        SlashCommand ping = SlashCommand.with("ping", "Checks if the CodeClub bot is online!")
+                .createForServer(event.getApi().getServerById(922516089320128513L).get())
+                .join();
 
-public class UserInfoCommand2 {
-    Main bot;
-    public UserInfoCommand2(Main bot) {
-        this.bot = bot;
+        SlashCommandInteraction interact = event.getSlashCommandInteraction();
+        if (interact.getCommandName().equals("ping")) {
+            interact.createImmediateResponder()
+                    .setContent("pong!")
+                    .respond();
+        }
     }
-
 }
